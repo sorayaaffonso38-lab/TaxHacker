@@ -17,7 +17,7 @@ COPY package*.json ./
 COPY prisma ./prisma/
 
 # Install dependencies
-RUN npm install --legacy-peer-deps
+RUN npm install --legacy-peer-deps && npm install --legacy-peer-deps
 
 # Copy source code
 COPY . .
