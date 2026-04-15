@@ -12,7 +12,7 @@ COPY . .
 
 RUN npx prisma generate
 
-RUN npm run build
+RUN npm_config_legacy_peer_deps=true npm run build
 
 FROM node:20-alpine AS runner
 
