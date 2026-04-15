@@ -12,6 +12,7 @@ COPY . .
 
 RUN npx prisma generate
 
+RUN npm install --legacy-peer-deps --save-dev typescript
 RUN npm_config_legacy_peer_deps=true npm run build
 
 FROM node:20-alpine AS runner
