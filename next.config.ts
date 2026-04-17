@@ -23,7 +23,7 @@ const nextConfig: NextConfig = {
 
 const isSentryEnabled = process.env.NEXT_PUBLIC_SENTRY_DSN && process.env.SENTRY_ORG && process.env.SENTRY_PROJECT
 
-export default isSentryEnabled
+const baseConfig = isSentryEnabled
   ? withSentryConfig(nextConfig, {
       silent: !process.env.CI,
       org: process.env.SENTRY_ORG,
@@ -33,3 +33,5 @@ export default isSentryEnabled
       tunnelRoute: "/monitoring",
     })
   : nextConfig
+
+export default { ...baseConfig, output: "standalone" }
