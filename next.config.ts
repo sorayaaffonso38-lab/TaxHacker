@@ -15,6 +15,8 @@ const nextConfig: NextConfig = {
     serverActions: {
       bodySizeLimit: "256mb",
     },
+    workerThreads: false,
+    cpus: 1,
   },
 }
 
