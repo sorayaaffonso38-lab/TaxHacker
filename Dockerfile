@@ -4,9 +4,9 @@ RUN apk add --no-cache libc6-compat openssl
 
 WORKDIR /app
 
-COPY package.json ./
+COPY package.json package-lock.json ./
 
-RUN npm install --legacy-peer-deps
+RUN npm ci --legacy-peer-deps
 RUN npm install --legacy-peer-deps --save-dev typescript @types/react @types/node
 
 COPY . .
