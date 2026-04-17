@@ -2,7 +2,6 @@ import { withSentryConfig } from "@sentry/nextjs"
 import type { NextConfig } from "next"
 
 const nextConfig: NextConfig = {
-  output: "standalone",
   eslint: {
     ignoreDuringBuilds: true,
   },
@@ -34,4 +33,4 @@ const baseConfig = isSentryEnabled
     })
   : nextConfig
 
-export default { ...baseConfig, output: "standalone" }
+export default baseConfig
