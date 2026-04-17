@@ -3,157 +3,129 @@ import config from "@/lib/config"
 export default async function Terms() {
   return (
     <div className="prose prose-slate max-w-none">
-      <h1 className="text-3xl font-bold mb-6 text-slate-900 border-b pb-2">Terms of Service</h1>
+      <h1 className="text-3xl font-bold mb-6 text-slate-900 border-b pb-2">Termos de Uso</h1>
       <p className="bg-slate-50 p-4 rounded-lg border border-slate-200 mb-6">
-        <strong className="text-slate-700">Effective Date:</strong> April 22, 2025
+        <strong className="text-slate-700">Data de vigência:</strong> 17 de abril de 2025
         <br />
-        <strong className="text-slate-700">Service:</strong>{" "}
-        <a href="https://taxhacker.app" className="text-blue-600 hover:text-blue-800">
-          https://taxhacker.app
-        </a>
+        <strong className="text-slate-700">Serviço:</strong> MeiControl
         <br />
-        <strong className="text-slate-700">Contact:</strong>{" "}
+        <strong className="text-slate-700">Contato:</strong>{" "}
         <a href={`mailto:${config.app.supportEmail}`} className="text-blue-600 hover:text-blue-800">
           {config.app.supportEmail}
         </a>
       </p>
 
       <p className="text-slate-700 mb-6 leading-relaxed">
-        These Terms of Service (&quot;Terms&quot;) govern your access to and use of TaxHacker, an automated invoice
-        analyzer and expense tracker powered by artificial intelligence (AI). By accessing or using our services, you
-        agree to be bound by these Terms.
+        Estes Termos de Uso (&quot;Termos&quot;) regem o acesso e uso do MeiControl, um analisador automático de notas
+        fiscais e gestor de despesas com inteligência artificial. Ao acessar ou usar nossos serviços, você concorda em
+        estar vinculado a estes Termos.
       </p>
 
-      <h2 className="text-2xl font-semibold text-slate-800 mb-4">1. Service Overview</h2>
-      <p className="text-slate-700 mb-3">TaxHacker offers:</p>
+      <h2 className="text-2xl font-semibold text-slate-800 mb-4">1. Descrição do Serviço</h2>
+      <p className="text-slate-700 mb-3">O MeiControl oferece:</p>
       <ul className="list-disc pl-6 mb-6 space-y-2 text-slate-700">
         <li>
-          A <strong className="text-slate-800">cloud-based platform</strong> with paid subscription tiers
-          (monthly/yearly)
+          Uma <strong className="text-slate-800">plataforma em nuvem</strong> com planos de assinatura
         </li>
         <li>
-          A <strong className="text-slate-800">self-hosted version</strong> available for free with no support
-          guarantees
+          Uma <strong className="text-slate-800">versão self-hosted</strong> gratuita sem garantias de suporte
         </li>
       </ul>
       <p className="text-slate-700 mb-6 leading-relaxed">
-        Users can upload invoices and receipts, analyze transactions, and manage expenses via AI-powered tools. The
-        service is primarily designed for freelancers and small businesses.
+        Os usuários podem fazer upload de notas fiscais e recibos, analisar transações e gerenciar despesas com
+        ferramentas de IA. O serviço é voltado principalmente para MEI, freelancers e pequenas empresas.
       </p>
 
-      <h2 className="text-2xl font-semibold text-slate-800 mb-4">2. Eligibility and Account Use</h2>
+      <h2 className="text-2xl font-semibold text-slate-800 mb-4">2. Elegibilidade e Uso da Conta</h2>
       <ul className="list-disc pl-6 mb-6 space-y-2 text-slate-700">
         <li>
-          You must be at least <strong className="text-slate-800">18 years old</strong> to use TaxHacker.
+          Você deve ter pelo menos <strong className="text-slate-800">18 anos</strong> para usar o MeiControl.
         </li>
+        <li>Você é responsável por manter a confidencialidade das credenciais de acesso e por todas as atividades realizadas na sua conta.</li>
+      </ul>
+
+      <h2 className="text-2xl font-semibold text-slate-800 mb-4">3. Assinaturas e Pagamentos</h2>
+      <ul className="list-disc pl-6 mb-6 space-y-2 text-slate-700">
         <li>
-          You may register and maintain <strong className="text-slate-800">multiple accounts</strong>.
+          Os planos pagos são gerenciados via <strong className="text-slate-800">Stripe</strong>, e todas as assinaturas{" "}
+          <strong className="text-slate-800">renovam automaticamente</strong> salvo cancelamento.
         </li>
+        <li>Você pode cancelar sua assinatura ou excluir sua conta a qualquer momento pelo painel.</li>
         <li>
-          You are responsible for maintaining the confidentiality of access credentials and for all activities under
-          your account.
+          Oferecemos <strong className="text-slate-800">política de reembolso sem questionamentos</strong>, mas nos
+          reservamos o direito de descontar custos de uso de IA e serviços de terceiros já incorridos.
         </li>
       </ul>
 
-      <h2 className="text-2xl font-semibold text-slate-800 mb-4">3. Subscriptions & Payments</h2>
+      <h2 className="text-2xl font-semibold text-slate-800 mb-4">4. Responsabilidades do Usuário</h2>
       <ul className="list-disc pl-6 mb-6 space-y-2 text-slate-700">
         <li>
-          Paid plans are managed through <strong className="text-slate-800">Stripe</strong>, and all subscriptions{" "}
-          <strong className="text-slate-800">renew automatically</strong> unless cancelled.
+          Você pode fazer upload de qualquer nota ou recibo <strong className="text-slate-800">a seu critério</strong>,
+          mas <strong className="text-slate-800">é o único responsável</strong> pelo conteúdo enviado.
         </li>
-        <li>You may cancel your subscription or delete your account at any time via your dashboard.</li>
         <li>
-          We offer a <strong className="text-slate-800">no-questions-asked refund policy</strong>, but reserve the right
-          to <strong className="text-slate-800">deduct costs</strong> for AI usage (e.g., token consumption) and
-          third-party service charges already incurred.
+          <strong className="text-slate-800">Material ilegal, fraudulento ou protegido por direitos autorais</strong>{" "}
+          sem permissão é estritamente proibido.
+        </li>
+        <li>
+          Você <strong className="text-slate-800">não pode redistribuir ou revender nossos serviços de IA</strong> a
+          terceiros sem consentimento por escrito.
         </li>
       </ul>
 
-      <h2 className="text-2xl font-semibold text-slate-800 mb-4">4. User Responsibilities</h2>
+      <h2 className="text-2xl font-semibold text-slate-800 mb-4">5. Uso de IA e Integrações de Terceiros</h2>
       <ul className="list-disc pl-6 mb-6 space-y-2 text-slate-700">
         <li>
-          You may upload any invoice or receipt <strong className="text-slate-800">at your discretion</strong>, but{" "}
-          <strong className="text-slate-800">you are solely responsible</strong> for the content you upload.
+          O MeiControl usa <strong className="text-slate-800">OpenAI, Google Gemini</strong> e outros provedores de IA
+          para processar e analisar documentos.
+        </li>
+        <li>Ao usar o serviço, você autoriza o processamento dos seus dados por esses provedores.</li>
+      </ul>
+
+      <h2 className="text-2xl font-semibold text-slate-800 mb-4">6. Propriedade Intelectual</h2>
+      <ul className="list-disc pl-6 mb-6 space-y-2 text-slate-700">
+        <li>
+          Você mantém a <strong className="text-slate-800">propriedade total</strong> do conteúdo enviado e de toda a
+          análise resultante.
         </li>
         <li>
-          <strong className="text-slate-800">Illegal, fraudulent, or copyrighted material</strong> without permission is
-          strictly prohibited. Violations may lead to immediate account suspension or termination.
-        </li>
-        <li>
-          You{" "}
-          <strong className="text-slate-800">may not redistribute, resell, or offer our AI analysis or services</strong>{" "}
-          to third parties without our written consent.
+          O MeiControl <strong className="text-slate-800">não reivindica nenhum direito</strong> sobre seus dados.
         </li>
       </ul>
 
-      <h2 className="text-2xl font-semibold text-slate-800 mb-4">5. AI Usage and Third-Party Integrations</h2>
+      <h2 className="text-2xl font-semibold text-slate-800 mb-4">7. Limitação de Responsabilidade</h2>
       <ul className="list-disc pl-6 mb-6 space-y-2 text-slate-700">
         <li>
-          TaxHacker uses <strong className="text-slate-800">OpenAI (ChatGPT)</strong> and other third-party APIs to
-          process and analyze documents.
+          O MeiControl é fornecido <strong className="text-slate-800">&quot;como está&quot;</strong>, sem garantias de
+          qualquer tipo.
         </li>
         <li>
-          By using the service, you grant us permission to process your data through these providers under appropriate
-          GDPR safeguards.
-        </li>
-        <li>
-          We may allow community-developed <strong className="text-slate-800">plugins and integrations</strong> for
-          extended functionality.
-        </li>
-      </ul>
-
-      <h2 className="text-2xl font-semibold text-slate-800 mb-4">6. Intellectual Property</h2>
-      <ul className="list-disc pl-6 mb-6 space-y-2 text-slate-700">
-        <li>
-          You retain <strong className="text-slate-800">full ownership</strong> of your uploaded content and all
-          resulting analysis.
-        </li>
-        <li>
-          TaxHacker does <strong className="text-slate-800">not claim any rights</strong> over your data.
-        </li>
-        <li>
-          You are free to <strong className="text-slate-800">reuse, download, publish, or export</strong> any data
-          processed by the service.
-        </li>
-      </ul>
-
-      <h2 className="text-2xl font-semibold text-slate-800 mb-4">7. Limitations of Liability</h2>
-      <ul className="list-disc pl-6 mb-6 space-y-2 text-slate-700">
-        <li>
-          TaxHacker is provided <strong className="text-slate-800">&quot;as is&quot;</strong>, without warranties of any
-          kind.
-        </li>
-        <li>
-          We make <strong className="text-slate-800">no guarantees</strong> about the accuracy of AI-generated outputs
-          or the suitability of our services for accounting, tax filing, or compliance purposes.
+          Não garantimos a precisão dos resultados gerados por IA para fins de contabilidade, declaração fiscal ou
+          conformidade legal.
         </li>
         <li className="bg-yellow-50 p-3 border-l-4 border-yellow-400">
-          <strong className="text-slate-800">⚠️ Important:</strong> TaxHacker is{" "}
-          <strong className="text-slate-800">not a substitute</strong> for professional tax or legal advice. You use the
-          service <strong className="text-slate-800">at your own risk</strong>.
+          <strong className="text-slate-800">⚠️ Importante:</strong> O MeiControl{" "}
+          <strong className="text-slate-800">não substitui</strong> um contador ou assessor fiscal profissional. Use o
+          serviço <strong className="text-slate-800">por sua conta e risco</strong>.
         </li>
       </ul>
 
-      <h2 className="text-2xl font-semibold text-slate-800 mb-4">8. Service Modifications and Termination</h2>
+      <h2 className="text-2xl font-semibold text-slate-800 mb-4">8. Modificação e Encerramento do Serviço</h2>
       <ul className="list-disc pl-6 mb-6 space-y-2 text-slate-700">
-        <li>
-          We reserve the right to <strong className="text-slate-800">modify or discontinue</strong> the service at any
-          time, with or without notice.
-        </li>
-        <li>We may suspend or terminate your account if you violate these Terms or abuse the service.</li>
+        <li>Reservamo-nos o direito de modificar ou descontinuar o serviço a qualquer momento, com ou sem aviso prévio.</li>
+        <li>Podemos suspender ou encerrar sua conta em caso de violação destes Termos.</li>
       </ul>
 
-      <h2 className="text-2xl font-semibold text-slate-800 mb-4">9. Governing Law and Dispute Resolution</h2>
+      <h2 className="text-2xl font-semibold text-slate-800 mb-4">9. Lei Aplicável e Resolução de Disputas</h2>
       <p className="text-slate-700 mb-6 leading-relaxed">
-        These Terms are governed by the laws of <strong className="text-slate-800">Germany</strong>.<br />
-        Any disputes shall be resolved exclusively in the courts located in{" "}
-        <strong className="text-slate-800">Germany</strong>, unless otherwise required by applicable law.
+        Estes Termos são regidos pelas leis do <strong className="text-slate-800">Brasil</strong>.<br />
+        Quaisquer disputas serão resolvidas nos tribunais competentes do Brasil, conforme aplicável.
       </p>
 
-      <h2 className="text-2xl font-semibold text-slate-800 mb-4">10. Changes to These Terms</h2>
+      <h2 className="text-2xl font-semibold text-slate-800 mb-4">10. Alterações nestes Termos</h2>
       <p className="text-slate-700 mb-6 leading-relaxed">
-        We may revise these Terms at any time. If we make material changes, we'll notify users via email or in-app
-        notification. Continued use after changes constitutes acceptance of the new Terms.
+        Podemos revisar estes Termos a qualquer momento. Se fizermos alterações relevantes, notificaremos os usuários
+        por e-mail ou notificação no app. O uso continuado após as alterações constitui aceite dos novos Termos.
       </p>
     </div>
   )

@@ -4,7 +4,7 @@ import "./globals.css"
 
 export const metadata: Metadata = {
   title: {
-    template: "%s | TaxHacker",
+    template: "%s | MeiControl",
     default: config.app.title,
   },
   description: config.app.description,
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(config.app.baseURL),
   openGraph: {
     type: "website",
-    locale: "en_US",
+    locale: "pt_BR",
     url: config.app.baseURL,
     title: config.app.title,
     description: config.app.description,

@@ -3,110 +3,93 @@ import config from "@/lib/config"
 export default async function AI() {
   return (
     <div className="prose prose-slate max-w-none">
-      <h1 className="text-3xl font-bold tracking-tight text-gray-900 mb-6">AI Use Disclosure</h1>
+      <h1 className="text-3xl font-bold tracking-tight text-gray-900 mb-6">Divulgação de Uso de IA</h1>
 
       <p className="bg-slate-50 p-4 rounded-lg border border-slate-200 mb-6">
-        <strong className="text-slate-700">Effective Date</strong>: April 22, 2025
+        <strong className="text-slate-700">Data de vigência</strong>: 17 de abril de 2025
         <br />
-        <strong className="text-slate-700">Contact Email</strong>:{" "}
+        <strong className="text-slate-700">E-mail de contato</strong>:{" "}
         <a href={`mailto:${config.app.supportEmail}`} className="text-blue-600 hover:text-blue-800">
           {config.app.supportEmail}
         </a>
-        <br />
-        <strong className="text-slate-700">Domain</strong>:{" "}
-        <a href="https://taxhacker.app" className="text-blue-600 hover:text-blue-800">
-          https://taxhacker.app
-        </a>
       </p>
 
       <p className="text-gray-700 leading-relaxed mb-6">
-        At TaxHacker, we use artificial intelligence (&quot;AI&quot;) to power the core features of our platform. This
-        document outlines how and why we use AI technologies, what data is processed, and how it may affect you as a
-        user.
+        No MeiControl, usamos inteligência artificial (&quot;IA&quot;) para alimentar as funcionalidades principais da
+        nossa plataforma. Este documento explica como e por que usamos tecnologias de IA, quais dados são processados e
+        como isso pode afetá-lo como usuário.
       </p>
 
-      <h2 className="text-2xl font-semibold text-gray-800 mt-8 mb-4">1. Purpose of AI in TaxHacker</h2>
-      <p className="text-gray-700 leading-relaxed mb-3">AI is essential to the TaxHacker experience. It is used for:</p>
+      <h2 className="text-2xl font-semibold text-gray-800 mt-8 mb-4">1. Finalidade da IA no MeiControl</h2>
+      <p className="text-gray-700 leading-relaxed mb-3">A IA é essencial para a experiência do MeiControl. Ela é usada para:</p>
       <ul className="list-disc pl-6 space-y-2 mb-6 text-gray-700">
-        <li>Optical Character Recognition (OCR) of scanned invoices and receipts</li>
-        <li>Automatic categorization and tagging of financial transactions</li>
-        <li>Summarization of expenses and vendor descriptions</li>
-        <li>Smart field population and autofill within forms</li>
-        <li>Custom prompt-driven workflows</li>
+        <li>Reconhecimento ótico de caracteres (OCR) em notas fiscais e recibos digitalizados</li>
+        <li>Categorização e marcação automática de transações financeiras</li>
+        <li>Resumo de despesas e descrições de fornecedores</li>
+        <li>Preenchimento automático inteligente de campos em formulários</li>
+        <li>Fluxos de trabalho personalizados com prompts customizados</li>
       </ul>
       <p className="text-gray-700 leading-relaxed mb-6">
-        All AI-generated content is visible directly in the user interface and may be applied to your transactions,
-        projects, and reports.
+        Todo conteúdo gerado por IA é visível diretamente na interface do usuário e pode ser aplicado às suas
+        transações, projetos e relatórios.
       </p>
 
-      <h2 className="text-2xl font-semibold text-gray-800 mt-8 mb-4">2. AI Providers and Models</h2>
+      <h2 className="text-2xl font-semibold text-gray-800 mt-8 mb-4">2. Provedores e Modelos de IA</h2>
       <p className="text-gray-700 leading-relaxed mb-3">
-        Our cloud-hosted version uses models provided by <strong>OpenAI</strong>, including:
+        Nossa versão em nuvem usa modelos fornecidos pela <strong>OpenAI</strong> e <strong>Google</strong>, incluindo:
       </p>
       <ul className="list-disc pl-6 space-y-2 mb-6 text-gray-700">
         <li>
-          <strong>gpt-4o-mini</strong> and <strong>gpt-4.1-mini</strong>
+          <strong>gpt-4o-mini</strong> (OpenAI)
+        </li>
+        <li>
+          <strong>gemini-2.5-flash</strong> (Google)
         </li>
       </ul>
       <p className="text-gray-700 leading-relaxed mb-6">
-        In the <strong>self-hosted version</strong>, users may choose to connect their own language models or AI
-        backends. We do not monitor or vet these setups and assume no responsibility for their output.
+        Na <strong>versão self-hosted</strong>, os usuários podem conectar seus próprios modelos de linguagem ou
+        backends de IA. Não monitoramos nem nos responsabilizamos por esses setups.
       </p>
 
-      <h2 className="text-2xl font-semibold text-gray-800 mt-8 mb-4">3. Data Sent for AI Processing</h2>
+      <h2 className="text-2xl font-semibold text-gray-800 mt-8 mb-4">3. Dados Enviados para Processamento por IA</h2>
       <p className="text-gray-700 leading-relaxed mb-3">
-        To deliver AI-powered features, we send selected user data to OpenAI&apos;s API, including:
+        Para entregar funcionalidades com IA, enviamos dados selecionados do usuário às APIs de IA, incluindo:
       </p>
       <ul className="list-disc pl-6 space-y-2 mb-6 text-gray-700">
-        <li>Uploaded documents (e.g., receipts, invoices)</li>
-        <li>Associated transaction metadata and user-provided fields</li>
-        <li>Historical context of past transactions (if required for analysis)</li>
+        <li>Documentos enviados (ex: recibos, notas fiscais)</li>
+        <li>Metadados de transações e campos preenchidos pelo usuário</li>
+        <li>Contexto histórico de transações anteriores (quando necessário para análise)</li>
       </ul>
       <p className="bg-amber-50 p-4 rounded-lg border border-amber-200 mb-4">
-        <strong className="text-amber-600">⚠️ Note:</strong> This data is <strong>not anonymized or redacted</strong>{" "}
-        before transmission. By using TaxHacker, you acknowledge and consent to this transfer.
-      </p>
-      <p className="text-gray-700 leading-relaxed mb-6">
-        We store <strong>structured outputs</strong> from the AI (e.g., parsed fields, categorization) in your account
-        for future use. We do <strong>not</strong> store raw AI prompts or responses beyond what's necessary to populate
-        your data.
+        <strong className="text-amber-600">⚠️ Atenção:</strong> Esses dados <strong>não são anonimizados</strong> antes
+        da transmissão. Ao usar o MeiControl, você reconhece e consente com essa transferência.
       </p>
 
-      <h2 className="text-2xl font-semibold text-gray-800 mt-8 mb-4">4. Human Involvement</h2>
+      <h2 className="text-2xl font-semibold text-gray-800 mt-8 mb-4">4. Envolvimento Humano</h2>
       <p className="text-gray-700 leading-relaxed mb-4">
-        We do <strong>not</strong> manually review AI-generated content. There is currently no mechanism for human
-        review, error flagging, or corrections.
+        Não revisamos manualmente o conteúdo gerado por IA. Não há atualmente mecanismo de revisão humana, sinalização
+        de erros ou correções.
       </p>
       <p className="text-gray-700 leading-relaxed mb-6">
-        Users are solely responsible for verifying the accuracy of AI-processed outputs before using them for financial
-        or reporting purposes.
+        Os usuários são os únicos responsáveis por verificar a precisão dos resultados processados por IA antes de
+        usá-los para fins financeiros ou de declaração.
       </p>
 
-      <h2 className="text-2xl font-semibold text-gray-800 mt-8 mb-4">5. Opt-Out and Core Dependency</h2>
+      <h2 className="text-2xl font-semibold text-gray-800 mt-8 mb-4">5. Dependência Central da IA</h2>
       <p className="text-gray-700 leading-relaxed mb-6">
-        AI processing is a fundamental component of TaxHacker and cannot be disabled. If you do not consent to your data
-        being processed via AI, you should not use the platform.
+        O processamento por IA é um componente fundamental do MeiControl e não pode ser desabilitado. Se você não
+        consente com o processamento dos seus dados via IA, não deve usar a plataforma.
       </p>
 
-      <h2 className="text-2xl font-semibold text-gray-800 mt-8 mb-4">6. Automated Decision-Making</h2>
+      <h2 className="text-2xl font-semibold text-gray-800 mt-8 mb-4">6. Riscos e Limitações</h2>
       <p className="text-gray-700 leading-relaxed mb-4">
-        Our AI systems do not make binding legal or financial decisions on your behalf. However, they may suggest
-        categories, values, or summaries based on the data you provide.
-      </p>
-      <p className="text-gray-700 leading-relaxed mb-6">
-        While these outputs may influence how your data is structured or interpreted, they are{" "}
-        <strong>not used to make automated decisions with legal or significant effects</strong> as defined under GDPR
-        Article 22.
-      </p>
-
-      <h2 className="text-2xl font-semibold text-gray-800 mt-8 mb-4">7. Risks and Limitations</h2>
-      <p className="text-gray-700 leading-relaxed mb-4">
-        AI-generated outputs are probabilistic and may contain errors, omissions, or misinterpretations. We make{" "}
-        <strong>no guarantees of accuracy</strong>, completeness, or suitability for tax, legal, or financial purposes.
+        Os resultados gerados por IA são probabilísticos e podem conter erros, omissões ou interpretações incorretas.
+        Não fazemos <strong>nenhuma garantia de precisão</strong>, completude ou adequação para fins fiscais, legais ou
+        financeiros.
       </p>
       <p className="bg-red-50 p-4 rounded-lg border border-red-200 mb-6">
-        <strong className="text-red-600">⚠️ Important:</strong> TaxHacker is <strong>not a substitute</strong> for a
-        certified accountant, tax advisor, or legal counsel. Use at your own risk.
+        <strong className="text-red-600">⚠️ Importante:</strong> O MeiControl <strong>não substitui</strong> um
+        contador, assessor fiscal ou advogado certificado. Use por sua conta e risco.
       </p>
     </div>
   )

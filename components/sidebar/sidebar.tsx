@@ -18,7 +18,7 @@ import {
 } from "@/components/ui/sidebar"
 import { UserProfile } from "@/lib/auth"
 import config from "@/lib/config"
-import { ClockArrowUp, FileText, Gift, House, Import, LayoutDashboard, Settings, Upload } from "lucide-react"
+import { ClockArrowUp, FileText, House, Import, LayoutDashboard, Settings, Upload } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
@@ -139,16 +139,6 @@ export function AppSidebar({
                     </Link>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
-                {isSelfHosted && (
-                  <SidebarMenuItem>
-                    <SidebarMenuButton asChild>
-                      <Link href="https://vas3k.com/donate/" target="_blank">
-                        <Gift />
-                        Thank the author
-                      </Link>
-                    </SidebarMenuButton>
-                  </SidebarMenuItem>
-                )}
                 {!open && (
                   <SidebarMenuItem>
                     <SidebarTrigger />
