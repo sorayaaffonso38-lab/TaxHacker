@@ -15,6 +15,7 @@ RUN npx prisma generate
 
 ENV NEXT_TELEMETRY_DISABLED=1
 ENV NODE_ENV=production
+ENV NODE_OPTIONS="--max-old-space-size=800"
 
 RUN npm run build
 
