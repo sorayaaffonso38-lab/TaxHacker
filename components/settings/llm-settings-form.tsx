@@ -66,21 +66,21 @@ export default function LLMSettingsForm({
       <form action={saveAction} className="space-y-4">
         {isSelfHosted && (
           <div className="space-y-2">
-            <label className="text-sm font-medium">LLM providers</label>
+            <label className="text-sm font-medium">Provedores de IA</label>
             <DndProviderBlocks
               providerOrder={providerOrder}
               setProviderOrder={setProviderOrder}
               providerValues={providerValues}
               handleProviderValueChange={handleProviderValueChange}
             />
-            <small className="text-muted-foreground">Drag provider blocks to reorder. First is highest priority.</small>
+            <small className="text-muted-foreground">Arraste os blocos para reordenar. O primeiro tem maior prioridade.</small>
           </div>
         )}
 
         {isSelfHosted && <input type="hidden" name="llm_providers" value={providerOrder.join(",")} />}
 
         <FormTextarea
-          title="Prompt for File Analysis Form"
+          title="Prompt para Análise de Arquivos"
           name="prompt_analyse_new_file"
           defaultValue={settings.prompt_analyse_new_file}
           className="h-96"
@@ -88,12 +88,12 @@ export default function LLMSettingsForm({
 
         <div className="flex flex-row items-center gap-4">
           <Button type="submit" disabled={pending}>
-            {pending ? "Saving..." : "Save Settings"}
+            {pending ? "Salvando..." : "Salvar Configurações"}
           </Button>
           {saveState?.success && (
             <p className="text-green-500 flex flex-row items-center gap-2">
               <CircleCheckBig />
-              Saved!
+              Salvo!
             </p>
           )}
         </div>
@@ -117,7 +117,7 @@ export default function LLMSettingsForm({
             href="/settings/fields"
             className="text-xs underline inline-flex flex-row items-center gap-1 text-muted-foreground"
           >
-            <Edit className="w-4 h-4" /> Edit Fields
+            <Edit className="w-4 h-4" /> Editar Campos
           </Link>
         </CardTitle>
         <pre className="text-xs overflow-hidden text-ellipsis">
@@ -227,12 +227,12 @@ function SortableProviderBlock({ id, idx, providerKey, value, handleValueChange 
           value={value.baseUrl}
           onChange={(e) => handleValueChange(provider.key, "baseUrl", e.target.value)}
           className="w-full border rounded px-2 py-1"
-          placeholder="Base URL (e.g. http://localhost:11434/v1)"
+          placeholder="URL base (ex: http://localhost:11434/v1)"
         />
       )}
       {provider.apiDoc && (
         <small className="text-muted-foreground">
-          Get your API key from{" "}
+          Obtenha sua chave de API em{" "}
           <a href={provider.apiDoc} target="_blank" className="underline">
             {provider.apiDocLabel}
           </a>

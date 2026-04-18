@@ -9,7 +9,7 @@ COPY package.json package-lock.json ./
 RUN npm ci --legacy-peer-deps
 RUN npm install --legacy-peer-deps --save-dev typescript @types/react @types/node
 
-ARG CACHEBUST=1
+ARG CACHEBUST=3
 RUN echo "Cache bust: $CACHEBUST"
 COPY . .
 

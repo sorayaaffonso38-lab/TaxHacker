@@ -21,21 +21,20 @@ export function NewsletterForm() {
       }
 
       setStatus("success")
-      setMessage("Thanks for subscribing! Check your email for confirmation.")
+      setMessage("Obrigado por se inscrever! Verifique seu e-mail para confirmação.")
       setEmail("")
     } catch (error) {
       setStatus("error")
-      setMessage(error instanceof Error ? error.message : "Failed to subscribe. Please try again.")
+      setMessage(error instanceof Error ? error.message : "Falha ao se inscrever. Tente novamente.")
     }
   }
 
   return (
     <div className="bg-gradient-to-r from-purple-50 to-blue-50 p-8 rounded-2xl shadow-sm ring-1 ring-gray-100">
       <div className="max-w-2xl mx-auto text-center">
-        <h3 className="text-2xl font-semibold mb-4">Stay Tuned</h3>
+        <h3 className="text-2xl font-semibold mb-4">Fique por dentro</h3>
         <p className="text-gray-600 mb-6">
-          We&apos;re working hard on making TaxHacker useful for everyone. Subscribe to our emails to get notified about
-          our plans and new features. No marketing, ads or spam.
+          Estamos trabalhando duro para tornar o MeiControl ainda mais útil. Assine nossa lista para ser notificado sobre novidades e funcionalidades. Sem marketing, anúncios ou spam.
         </p>
         <form onSubmit={handleSubmit} className="flex flex-col gap-4 max-w-md mx-auto">
           <div className="flex flex-wrap items-center justify-center gap-4">
@@ -43,7 +42,7 @@ export function NewsletterForm() {
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              placeholder="Enter your email"
+              placeholder="Seu e-mail"
               className="flex-1 px-4 py-3 rounded-full border border-gray-200 focus:outline-none focus:ring-2 focus:ring-purple-500"
               required
             />
@@ -52,7 +51,7 @@ export function NewsletterForm() {
               disabled={status === "loading"}
               className="px-6 py-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-medium rounded-full hover:opacity-90 transition-all shadow-lg shadow-purple-500/20 disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              {status === "loading" ? "Subscribing..." : "Subscribe"}
+              {status === "loading" ? "Inscrevendo..." : "Inscrever-se"}
             </button>
           </div>
           {message && (

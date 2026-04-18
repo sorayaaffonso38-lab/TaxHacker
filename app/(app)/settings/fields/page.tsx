@@ -15,42 +15,40 @@ export default async function FieldsSettingsPage() {
 
   return (
     <div className="container">
-      <h1 className="text-2xl font-bold mb-2">Custom Fields</h1>
+      <h1 className="text-2xl font-bold mb-2">Campos Personalizados</h1>
       <p className="text-sm text-gray-500 mb-6 max-w-prose">
-        You can add new fields to your transactions. Standard fields can&apos;t be removed but you can tweak their
-        prompts or hide them. If you don&apos;t want a field to be analyzed by AI but filled in by hand, leave the
-        &quot;LLM prompt&quot; empty.
+        Você pode adicionar novos campos às suas transações. Campos padrão não podem ser removidos, mas você pode ajustar seus prompts ou ocultá-los. Se não quiser que um campo seja analisado pela IA, deixe o "Prompt de IA" em branco.
       </p>
       <CrudTable
         items={fieldsWithActions}
         columns={[
-          { key: "name", label: "Name", editable: true },
+          { key: "name", label: "Nome", editable: true },
           {
             key: "type",
-            label: "Type",
+            label: "Tipo",
             type: "select",
             options: ["string", "number", "boolean"],
             defaultValue: "string",
             editable: true,
           },
-          { key: "llm_prompt", label: "LLM Prompt", editable: true },
+          { key: "llm_prompt", label: "Prompt de IA", editable: true },
           {
             key: "isVisibleInList",
-            label: "Show in transactions table",
+            label: "Mostrar na tabela de transações",
             type: "checkbox",
             defaultValue: false,
             editable: true,
           },
           {
             key: "isVisibleInAnalysis",
-            label: "Show in analysis form",
+            label: "Mostrar no formulário de análise",
             type: "checkbox",
             defaultValue: false,
             editable: true,
           },
           {
             key: "isRequired",
-            label: "Is required",
+            label: "Obrigatório",
             type: "checkbox",
             defaultValue: false,
             editable: true,
