@@ -1,6 +1,8 @@
 import { prisma } from "@/lib/db"
 
-export const DEFAULT_PROMPT_ANALYSE_NEW_FILE = `You are an accountant and invoice analysis assistant. Extract following information from the given invoice: 
+export const DEFAULT_PROMPT_ANALYSE_NEW_FILE = `Você é um assistente contábil especializado em MEI e prestadores de serviço brasileiros. Extraia as seguintes informações da nota fiscal ou recibo fornecido:
+
+
 
 {fields}
 
@@ -14,29 +16,29 @@ And projects are:
 
 {projects}
 
-IMPORTANT RULES:
-- Do not include any other text in your response!
-- If you can't find something leave it blank, NEVER make up information
-- Return only one object`
+REGRAS IMPORTANTES:
+- Não inclua nenhum outro texto na sua resposta!
+- Se não encontrar algo, deixe em branco. NUNCA invente informações
+- Retorne apenas um objeto JSON`
 
 export const DEFAULT_SETTINGS = [
   {
     code: "default_currency",
     name: "Default Currency",
     description: "Don't change this setting if you already have multi-currency transactions. I won't recalculate them.",
-    value: "EUR",
+    value: "BRL",
   },
   {
     code: "default_category",
-    name: "Default Category",
+    name: "Categoria Padrão",
     description: "",
-    value: "other",
+    value: "outros",
   },
   {
     code: "default_project",
-    name: "Default Project",
+    name: "Projeto Padrão",
     description: "",
-    value: "personal",
+    value: "geral",
   },
   {
     code: "default_type",
@@ -60,48 +62,106 @@ export const DEFAULT_SETTINGS = [
 
 export const DEFAULT_CATEGORIES = [
   {
-    code: "ads",
-    name: "Advertisement",
-    color: "#882727",
-    llm_prompt: "ads, promos, online ads, etc",
+    code: "servicos_prestados",
+    name: "Serviços Prestados",
+    color: "#059669",
+    llm_prompt: "serviço prestado, receita de serviço, honorário, consultoria, freelance, desenvolvimento, design, nota fiscal de serviço, NFS-e",
   },
   {
-    code: "swag",
-    name: "Swag and Goods",
-    color: "#882727",
-    llm_prompt: "swag, stickers, goods, etc",
+    code: "das",
+    name: "DAS / Impostos MEI",
+    color: "#dc2626",
+    llm_prompt: "DAS, imposto MEI, guia de pagamento, tributo, INSS MEI, imposto simples nacional, declaração anual",
   },
-  { code: "donations", name: "Gifts and Donations", color: "#1e6359", llm_prompt: "donations, gifts, charity" },
-  { code: "tools", name: "Equipment and Tools", color: "#c69713", llm_prompt: "equipment, tools" },
-  { code: "events", name: "Events and Conferences", color: "#ff8b32", llm_prompt: "events, conferences" },
-  { code: "food", name: "Food and Drinks", color: "#d40e70", llm_prompt: "food, drinks, business meals" },
-  { code: "insurance", name: "Insurance", color: "#050942", llm_prompt: "insurance, health, life" },
-  { code: "invoice", name: "Invoice", color: "#064e85", llm_prompt: "custom invoice, bill" },
-  { code: "communication", name: "Mobile and Internet", color: "#0e7d86", llm_prompt: "mobile, internet, phone" },
-  { code: "office", name: "Office Supplies", color: "#59b0b9", llm_prompt: "office, supplies, stationery" },
-  { code: "online", name: "Online Services", color: "#8753fb", llm_prompt: "online services, saas, subscriptions" },
-  { code: "rental", name: "Rental", color: "#050942", llm_prompt: "rental, lease" },
   {
-    code: "education",
-    name: "Education",
-    color: "#ee5d6c",
-    llm_prompt: "education, professional development, trainings",
+    code: "pro_labore",
+    name: "Pró-labore",
+    color: "#7c3aed",
+    llm_prompt: "pró-labore, retirada do sócio, salário do proprietário, remuneração do dono",
   },
-  { code: "salary", name: "Salary", color: "#ce4993", llm_prompt: "salary, wages, etc" },
-  { code: "fees", name: "Fees", color: "#6a0d83", llm_prompt: "fees, charges, penalties, etc" },
-  { code: "travel", name: "Travel Expenses", color: "#fb9062", llm_prompt: "travel, accommodation, etc" },
-  { code: "utility_bills", name: "Utility Bills", color: "#af7e2e", llm_prompt: "bills, electricity, water, etc" },
   {
-    code: "transport",
-    name: "Transport",
+    code: "material",
+    name: "Materiais e Insumos",
+    color: "#b45309",
+    llm_prompt: "material, insumo, matéria-prima, produto para revenda, estoque, mercadoria",
+  },
+  {
+    code: "equipamentos",
+    name: "Equipamentos e Ferramentas",
+    color: "#c69713",
+    llm_prompt: "equipamento, ferramenta, máquina, notebook, computador, celular profissional, hardware",
+  },
+  {
+    code: "software",
+    name: "Software e Assinaturas",
+    color: "#2b5a1d",
+    llm_prompt: "software, licença, assinatura, SaaS, aplicativo, plataforma digital, hospedagem, domínio",
+  },
+  {
+    code: "comunicacao",
+    name: "Telefone e Internet",
+    color: "#0e7d86",
+    llm_prompt: "telefone, celular, internet, banda larga, plano de dados, comunicação",
+  },
+  {
+    code: "transporte",
+    name: "Transporte e Deslocamento",
     color: "#800000",
-    llm_prompt: "transportation costs, fuel, car rental, vignettes, etc",
+    llm_prompt: "transporte, combustível, uber, 99, táxi, passagem, pedágio, estacionamento, deslocamento a trabalho",
   },
-  { code: "software", name: "Software", color: "#2b5a1d", llm_prompt: "software, licenses" },
-  { code: "other", name: "Other", color: "#121216", llm_prompt: "other, miscellaneous," },
+  {
+    code: "alimentacao",
+    name: "Alimentação",
+    color: "#d40e70",
+    llm_prompt: "alimentação, refeição, restaurante, lanche, delivery, almoço de negócios",
+  },
+  {
+    code: "escritorio",
+    name: "Material de Escritório",
+    color: "#59b0b9",
+    llm_prompt: "material de escritório, papelaria, impressão, cartão de visita, caneta, papel",
+  },
+  {
+    code: "marketing",
+    name: "Marketing e Publicidade",
+    color: "#882727",
+    llm_prompt: "marketing, publicidade, anúncio, Google Ads, Facebook Ads, Instagram Ads, impulsionamento, design gráfico, criação de site",
+  },
+  {
+    code: "capacitacao",
+    name: "Cursos e Capacitação",
+    color: "#ee5d6c",
+    llm_prompt: "curso, treinamento, capacitação, workshop, mentoria, livro técnico, educação profissional",
+  },
+  {
+    code: "contabilidade",
+    name: "Contabilidade e Consultoria",
+    color: "#6a0d83",
+    llm_prompt: "contador, contabilidade, consultoria, assessoria, honorário contábil, advogado",
+  },
+  {
+    code: "aluguel",
+    name: "Aluguel e Espaço",
+    color: "#050942",
+    llm_prompt: "aluguel, coworking, espaço de trabalho, locação comercial, sala comercial",
+  },
+  {
+    code: "contas",
+    name: "Contas e Utilidades",
+    color: "#af7e2e",
+    llm_prompt: "conta de luz, água, energia elétrica, gás, conta de serviços",
+  },
+  {
+    code: "outros",
+    name: "Outros",
+    color: "#121216",
+    llm_prompt: "outros, miscelânea, despesa diversa, não classificado",
+  },
 ]
 
-export const DEFAULT_PROJECTS = [{ code: "personal", name: "Personal", llm_prompt: "personal", color: "#1e202b" }]
+export const DEFAULT_PROJECTS = [
+  { code: "geral", name: "Geral", llm_prompt: "geral, pessoal, sem projeto específico", color: "#1e202b" },
+]
 
 export const DEFAULT_CURRENCIES = [
   { code: "USD", name: "$" },
@@ -415,10 +475,30 @@ export const DEFAULT_FIELDS = [
     isExtra: false,
   },
   {
+    code: "status_emissao",
+    name: "Status da Nota",
+    type: "string",
+    llm_prompt: "status de emissão da nota fiscal: Emitida, Pendente ou Cancelada",
+    isVisibleInList: true,
+    isVisibleInAnalysis: true,
+    isRequired: false,
+    isExtra: true,
+  },
+  {
+    code: "numero_nota",
+    name: "Número da NF",
+    type: "string",
+    llm_prompt: "número da nota fiscal, NF-e, NFS-e ou recibo",
+    isVisibleInList: true,
+    isVisibleInAnalysis: true,
+    isRequired: false,
+    isExtra: true,
+  },
+  {
     code: "vat_rate",
-    name: "VAT Rate",
+    name: "Alíquota ISS/ICMS (%)",
     type: "number",
-    llm_prompt: "VAT rate in percentage 0-100",
+    llm_prompt: "alíquota do imposto em percentual (ISS, ICMS, etc) de 0 a 100",
     isVisibleInList: false,
     isVisibleInAnalysis: false,
     isRequired: false,
@@ -426,9 +506,9 @@ export const DEFAULT_FIELDS = [
   },
   {
     code: "vat",
-    name: "VAT Amount",
+    name: "Valor do Imposto",
     type: "number",
-    llm_prompt: "total VAT in currency of the invoice",
+    llm_prompt: "valor total do imposto na moeda da nota (ISS, ICMS, etc)",
     isVisibleInList: false,
     isVisibleInAnalysis: false,
     isRequired: false,

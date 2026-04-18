@@ -1,4 +1,5 @@
 import DashboardDropZoneWidget from "@/components/dashboard/drop-zone-widget"
+import { DasReminderWidget } from "@/components/dashboard/das-reminder-widget"
 import { StatsWidget } from "@/components/dashboard/stats-widget"
 import DashboardUnsortedWidget from "@/components/dashboard/unsorted-widget"
 import { WelcomeWidget } from "@/components/dashboard/welcome-widget"
@@ -23,6 +24,8 @@ export default async function Dashboard({ searchParams }: { searchParams: Promis
 
   return (
     <div className="flex flex-col gap-5 p-5 w-full max-w-7xl self-center">
+      <DasReminderWidget />
+
       <div className="flex flex-col sm:flex-row gap-5 items-stretch h-full">
         <DashboardDropZoneWidget />
 

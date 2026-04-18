@@ -14,11 +14,11 @@ export async function WelcomeWidget() {
 
   return (
     <Card className="flex flex-col lg:flex-row items-start gap-10 p-10 w-full">
-      <Image src="/logo/1024.png" alt="Logo" width={256} height={256} className="w-64 h-64" />
+      <Image src="/logo/1024.png" alt="Logo" width={256} height={256} className="w-32 h-32 lg:w-64 lg:h-64" />
       <div className="flex flex-col">
         <CardTitle className="flex items-center justify-between">
           <span className="text-2xl font-bold">
-            <ColoredText>Hey, I&apos;m TaxHacker 👋</ColoredText>
+            <ColoredText>Olá! Bem-vindo ao MeiControl 👋</ColoredText>
           </span>
           <Button
             variant="outline"
@@ -34,88 +34,66 @@ export async function WelcomeWidget() {
         </CardTitle>
         <CardDescription className="mt-5">
           <p className="mb-3">
-            I&apos;m a little accountant app that helps you deal with endless receipts, checks and invoices with (you
-            guessed it) AI. Here&apos;s what I can do:
+            Sou seu assistente financeiro com IA, feito para MEI e prestadores de serviço. Veja o que posso fazer por você:
           </p>
           <ul className="mb-5 list-disc pl-5 space-y-1">
             <li>
-              <strong>Upload me a photo or a PDF</strong> and I will recognize, categorize and save it as a transaction
-              for your tax advisor.
+              <strong>Envie uma foto ou PDF</strong> e eu reconheço, categorizo e salvo automaticamente como transação.
             </li>
             <li>
-              I can <strong>automatically convert currencies</strong> and look up exchange rates for a given date.
+              <strong>Converto moedas automaticamente</strong> e consulto cotações históricas pela data da transação.
             </li>
             <li>
-              I even <strong>support crypto!</strong> Historical exchange rates for staking too.
+              <strong>Categorização automática por IA</strong>: despesas operacionais, serviços prestados, impostos e mais.
             </li>
             <li>
-              All <strong>LLM prompts are configurable</strong>: for fields, categories and projects. You can go to
-              settings and change them however you want.
+              <strong>Lembro você do vencimento do DAS</strong> e outras obrigações fiscais do MEI.
             </li>
             <li>
-              I save data in a <strong>local SQLite database</strong> and can export it to CSV and ZIP archives.
+              Todos os <strong>prompts de IA são configuráveis</strong>: campos, categorias e projetos do seu jeito.
             </li>
             <li>
-              You can even <strong>create your own new fields</strong> to be analyzed and they will be included in the
-              CSV export for your tax advisor.
+              <strong>Exporte para CSV</strong> para facilitar a declaração do IR ou enviar ao seu contador.
             </li>
             <li>
-              I&apos;m still <strong>very young</strong> and can make mistakes. Use me at your own risk!
+              Ainda sou <strong>jovem e posso errar</strong>. Sempre valide os dados com seu contador!
             </li>
           </ul>
-          <p className="mb-3">
-            While I can save you a lot of time in categorizing transactions and generating reports, I still highly
-            recommend giving the results to a professional tax advisor for review when filing your taxes!
+          <p className="mb-3 text-amber-600 font-medium">
+            ⚠️ O MeiControl não substitui um contador. Use os dados gerados como apoio, não como declaração oficial.
           </p>
         </CardDescription>
-        <div className="mt-2">
-          <Link href="https://github.com/vas3k/TaxHacker" className="text-blue-500 hover:underline">
-            Source Code
-          </Link>
-          <span className="mx-2">|</span>
-          <Link href="https://github.com/vas3k/TaxHacker/issues" className="text-blue-500 hover:underline">
-            Request New Feature
-          </Link>
-          <span className="mx-2">|</span>
-          <Link href="https://github.com/vas3k/TaxHacker/issues" className="text-blue-500 hover:underline">
-            Report a Bug
-          </Link>
-          <span className="mx-2">|</span>
-          <Link href="mailto:me@vas3k.ru" className="text-blue-500 hover:underline">
-            Contact the Author
-          </Link>
-        </div>
         <div className="flex flex-wrap gap-2 mt-8">
           {settings.openai_api_key === "" && (
             <Link href="/settings/llm">
               <Button>
                 <Key className="h-4 w-4" />
-                Please give your ChatGPT key here
+                Configure sua chave de IA aqui
               </Button>
             </Link>
           )}
           <Link href="/settings">
             <Button variant="outline">
               <Banknote className="h-4 w-4" />
-              Default Currency: {settings.default_currency}
+              Moeda padrão: {settings.default_currency}
             </Button>
           </Link>
           <Link href="/settings/categories">
             <Button variant="outline">
               <ChartBarStacked className="h-4 w-4" />
-              Categories
+              Categorias
             </Button>
           </Link>
           <Link href="/settings/projects">
             <Button variant="outline">
               <FolderOpenDot className="h-4 w-4" />
-              Projects
+              Projetos
             </Button>
           </Link>
           <Link href="/settings/fields">
             <Button variant="outline">
               <TextCursorInput className="h-4 w-4" />
-              Custom Fields
+              Campos Personalizados
             </Button>
           </Link>
         </div>

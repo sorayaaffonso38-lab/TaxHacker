@@ -73,7 +73,7 @@ export function AppSidebar({
                   <SidebarMenuButton asChild>
                     <Link href="/dashboard">
                       <House />
-                      <span>Home</span>
+                      <span>Início</span>
                     </Link>
                   </SidebarMenuButton>
                 </SidebarMenuItemWithHighlight>
@@ -82,7 +82,7 @@ export function AppSidebar({
                   <SidebarMenuButton asChild>
                     <Link href="/transactions">
                       <FileText />
-                      <span>Transactions</span>
+                      <span>Transações</span>
                       {notification && notification.code === "sidebar.transactions" && notification.message && (
                         <Blinker />
                       )}
@@ -95,7 +95,7 @@ export function AppSidebar({
                   <SidebarMenuButton asChild>
                     <Link href="/unsorted">
                       <ClockArrowUp />
-                      <span>Unsorted</span>
+                      <span>A Classificar</span>
                       {unsortedFilesCount > 0 && (
                         <span className="flex h-5 w-5 items-center justify-center rounded-full bg-primary text-xs font-medium text-primary-foreground">
                           {unsortedFilesCount}
@@ -110,7 +110,7 @@ export function AppSidebar({
                   <SidebarMenuButton asChild>
                     <Link href="/apps">
                       <LayoutDashboard />
-                      <span>Apps</span>
+                      <span>Ferramentas</span>
                     </Link>
                   </SidebarMenuButton>
                 </SidebarMenuItemWithHighlight>
@@ -118,7 +118,7 @@ export function AppSidebar({
                   <SidebarMenuButton asChild>
                     <Link href="/settings">
                       <Settings />
-                      <span>Settings</span>
+                      <span>Configurações</span>
                     </Link>
                   </SidebarMenuButton>
                 </SidebarMenuItemWithHighlight>
@@ -135,7 +135,7 @@ export function AppSidebar({
                   <SidebarMenuButton asChild>
                     <Link href="/import/csv">
                       <Import />
-                      Import from CSV
+                      Importar CSV
                     </Link>
                   </SidebarMenuButton>
                 </SidebarMenuItem>

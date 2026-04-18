@@ -59,11 +59,11 @@ export default function DashboardDropZoneWidget() {
           )}
           <div>
             <p className="text-lg font-medium">
-              {isUploading ? "Uploading..." : "Take a photo or drop your files here"}
+              {isUploading ? "Enviando..." : "Tire uma foto ou arraste seus arquivos aqui"}
             </p>
             {!uploadError && (
               <p className="text-sm text-muted-foreground">
-                upload receipts, invoices and any other documents for me to scan
+                envie notas fiscais, recibos e qualquer documento para a IA processar
               </p>
             )}
             {uploadError && <FormError>{uploadError}</FormError>}
