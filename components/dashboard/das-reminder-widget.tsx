@@ -36,24 +36,24 @@ export function DasReminderWidget() {
     <Card
       className={`w-full border-2 ${
         isUrgent
-          ? "border-red-400 bg-red-50"
+          ? "border-red-700 bg-red-50"
           : isWarning
-            ? "border-amber-400 bg-amber-50"
-            : "border-emerald-300 bg-emerald-50"
+            ? "border-amber-500 bg-amber-50"
+            : "border-gray-200 bg-gray-50"
       }`}
     >
       <CardContent className="flex items-center gap-4 p-4">
-        {isUrgent && <AlertTriangle className="h-8 w-8 text-red-500 shrink-0" />}
-        {isWarning && <Bell className="h-8 w-8 text-amber-500 shrink-0" />}
-        {isOk && <CheckCircle className="h-8 w-8 text-emerald-500 shrink-0" />}
+        {isUrgent && <AlertTriangle className="h-8 w-8 text-red-700 shrink-0" />}
+        {isWarning && <Bell className="h-8 w-8 text-amber-600 shrink-0" />}
+        {isOk && <CheckCircle className="h-8 w-8 text-gray-500 shrink-0" />}
 
         <div className="flex-1">
-          <p className={`font-bold text-sm ${isUrgent ? "text-red-700" : isWarning ? "text-amber-700" : "text-emerald-700"}`}>
+          <p className={`font-bold text-sm ${isUrgent ? "text-red-800" : isWarning ? "text-amber-700" : "text-gray-700"}`}>
             {isUrgent && "⚠️ DAS vence em breve!"}
             {isWarning && "🔔 Lembrete: DAS se aproximando"}
-            {isOk && "✅ DAS em dia"}
+            {isOk && "✓ DAS em dia"}
           </p>
-          <p className={`text-sm ${isUrgent ? "text-red-600" : isWarning ? "text-amber-600" : "text-emerald-600"}`}>
+          <p className={`text-sm ${isUrgent ? "text-red-700" : isWarning ? "text-amber-600" : "text-gray-500"}`}>
             {daysUntil === 0
               ? "O DAS vence HOJE (dia 20)!"
               : daysUntil === 1
@@ -65,12 +65,12 @@ export function DasReminderWidget() {
         <Link
           href="https://www.gov.br/empresas-e-negocios/pt-br/empreendedor/servicos-para-mei/pagamento-mensal-obrigatorio-das"
           target="_blank"
-          className={`text-xs font-semibold px-3 py-1 rounded-full whitespace-nowrap ${
+          className={`text-xs font-bold px-4 py-2 rounded-full whitespace-nowrap tracking-wide uppercase ${
             isUrgent
-              ? "bg-red-500 text-white hover:bg-red-600"
+              ? "bg-red-700 text-white hover:bg-red-800"
               : isWarning
                 ? "bg-amber-500 text-white hover:bg-amber-600"
-                : "bg-emerald-500 text-white hover:bg-emerald-600"
+                : "bg-gray-900 text-white hover:bg-gray-700"
           } transition-colors`}
         >
           Pagar DAS
